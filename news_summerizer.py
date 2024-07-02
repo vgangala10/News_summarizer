@@ -1,5 +1,5 @@
 import requests
-from dotenv import load_dotenv
+# from dotenv import load_dotenv
 import streamlit as st
 from bs4 import BeautifulSoup
 from transformers import pipeline
@@ -11,7 +11,7 @@ device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 load_dotenv()
 
 # Access the Hugging Face API key
-huggingface_api_key = os.getenv('HUGGINGFACE_API_KEY')
+huggingface_api_key = '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'
 
 # Initialize the summarization pipeline
 summarizer = pipeline("summarization", model='t5-small', device=0 if torch.cuda.is_available() else -1)
@@ -71,7 +71,7 @@ def clean_article_text(text):
     text = text.replace('\n', ' ').strip()
     return text
 
-api_key = os.getenv('NEWSQA_API_KEY')
+api_key = '48fdf9717571498bb5af3f6924d78dbd'
 
 st.title("Fast News")
 st.write('Get all the latest news in short from various categories')
