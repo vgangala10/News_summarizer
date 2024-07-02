@@ -5,13 +5,14 @@ from bs4 import BeautifulSoup
 from transformers import pipeline
 from transformers import T5Tokenizer, T5ForConditionalGeneration
 import torch
+import os
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 # load_dotenv()
 
 # Access the Hugging Face API key
-huggingface_api_key = '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'
+os.environ['HUGGINGFACE_API_KEY'] = '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'
 
 summarizer = pipeline("summarization", model='t5-small', device=0 if torch.cuda.is_available() else -1)
 
