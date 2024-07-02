@@ -8,7 +8,7 @@ import torch
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
-load_dotenv()
+# load_dotenv()
 
 # Access the Hugging Face API key
 huggingface_api_key = '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'
