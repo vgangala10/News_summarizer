@@ -1,5 +1,5 @@
 [server]
 headless = true
 enableCORS = false
-HUGGINGFACE_API_KEY='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'
-NEWSQA_API_KEY='48fdf9717571498bb5af3f6924d78dbd'
+# HUGGINGFACE_API_KEY='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'
+# NEWSQA_API_KEY='48fdf9717571498bb5af3f6924d78dbd'
