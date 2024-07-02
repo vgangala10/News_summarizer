@@ -16,8 +16,12 @@ os.environ['HUGGINGFACE_API_KEY'] = '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'
 
 summarizer = pipeline("summarization", model='t5-small', device=0 if torch.cuda.is_available() else -1)
 
-tokenizer = T5Tokenizer.from_pretrained('gvharsha/news_qa_t5')
-model = T5ForConditionalGeneration.from_pretrained('gvharsha/news_qa_t5').to(device)
+@st.cache_resource
+def get_model():
+    tokenizer = T5Tokenizer.from_pretrained('gvharsha/news_qa_t5')
+    model = T5ForConditionalGeneration.from_pretrained('gvharsha/news_qa_t5').to(device)
+    return tokenizer, model
+tokenizer, model = get_model()    
 # model.to(device)
 
 def answer_question(question, context):
