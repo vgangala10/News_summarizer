@@ -13,11 +13,10 @@ device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 # Access the Hugging Face API key
 huggingface_api_key = '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'
 
-# Initialize the summarization pipeline
 summarizer = pipeline("summarization", model='t5-small', device=0 if torch.cuda.is_available() else -1)
 
-tokenizer = T5Tokenizer.from_pretrained('fine-tuned-t5')
-model = T5ForConditionalGeneration.from_pretrained('fine-tuned-t5').to(device)
+tokenizer = T5Tokenizer.from_pretrained('gvharsha/news_qa_t5')
+model = T5ForConditionalGeneration.from_pretrained('gvharsha/news_qa_t5').to(device)
 # model.to(device)
 
 def answer_question(question, context):
